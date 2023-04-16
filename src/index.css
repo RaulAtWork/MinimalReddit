@@ -1,0 +1,6 @@
+/*Imports are resolved sequentially meaning that
+the latest declaration of css will prevail*/
+
+@import './styles/reset.css';
+@import './styles/global.css';
+@import './styles/styles.css'
