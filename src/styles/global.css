@@ -1,2 +1,50 @@
-@import './variables.css'
+@import "./variables.css";
 /*Global changes*/
+:root {
+  --header-height: 56px;
+  --footer-height: 46px;
+  --nav-padding-top: 18px;
+}
+
+html{
+    min-height: 100vh;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 16px;
+  height: var(--header-height);
+  background-color: aquamarine; /*TODO remove*/
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 16px;
+  height: var(--footer-height);
+  background-color: blanchedalmond; /*TODO remove*/
+}
+
+#main-content {
+  display: flex;
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+}
+#main-content > :first-child {
+  width: 300px;
+  background-color: darkseagreen; /*TODO remove*/
+}
+
+nav{
+    padding: var(--nav-padding-top) 0px 0px 16px;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: var(--nav-padding-top);
+}

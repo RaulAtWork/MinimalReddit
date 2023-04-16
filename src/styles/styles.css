@@ -1,2 +1,8 @@
-@import './variables.css'
+@import "./variables.css";
 /*classes and local changes*/
+
+.container{
+    max-width: var(--max-width-container);
+    display: flex;
+    flex-direction: column;
+}
