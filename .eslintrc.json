@@ -17,6 +17,7 @@
         "react"
     ],
     "rules": {
-        "jest/globals":"off"
+        "jest/globals":"off",
+        "react/prop-types":"off"
     }
 }

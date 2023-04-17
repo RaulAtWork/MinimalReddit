@@ -6,8 +6,12 @@
   --nav-padding-top: 18px;
 }
 
+
+
 html{
     min-height: 100vh;
+    color: var(--color-text);
+    background-color: var(--color-background);
 }
 
 header {
@@ -16,7 +20,7 @@ header {
   justify-content: center;
   padding: 0px 16px;
   height: var(--header-height);
-  background-color: aquamarine; /*TODO remove*/
+  background-color: var(--color-primary);
 }
 
 footer {
@@ -26,7 +30,7 @@ footer {
   align-items: center;
   padding: 0px 16px;
   height: var(--footer-height);
-  background-color: blanchedalmond; /*TODO remove*/
+  background-color: var(--color-background);
 }
 
 #main-content {
@@ -35,7 +39,7 @@ footer {
 }
 #main-content > :first-child {
   width: 300px;
-  background-color: darkseagreen; /*TODO remove*/
+  background-color: var(--color-secondary);
 }
 
 nav{
