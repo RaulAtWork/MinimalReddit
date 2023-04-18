@@ -3,7 +3,6 @@
 :root {
   --header-height: 56px;
   --footer-height: 46px;
-  --nav-padding-top: 18px;
 }
 
 
@@ -43,7 +42,8 @@ footer {
 }
 
 nav{
-    padding: var(--nav-padding-top) 0px 0px 16px;
+    display: flex;
+    flex-direction: column;
 }
 main{
     display: flex;
