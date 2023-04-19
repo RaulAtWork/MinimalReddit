@@ -6,7 +6,6 @@ function ThemeToggle() {
   const { mode, toggleTheme } = useContext(ThemeContext);
   const boolValue = mode === MODE_LIGHT;
   const themeLabel = mode === MODE_LIGHT ? "Theme: Light" : "Theme: Dark";
-  console.log({ boolValue });
 
   return (
     <SwitchButton
