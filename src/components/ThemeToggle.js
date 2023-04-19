@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { MODE_LIGHT, ThemeContext } from "../app/ThemeContext";
+import { MODE_LIGHT, ThemeContext } from "./ThemeContext";
 import SwitchButton from "./presentational/SwitchButton";
 
 function ThemeToggle() {
