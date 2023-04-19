@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import SideBar from "../components/SideBar";
-import ThemeProvider from "./ThemeContext";
+import ThemeProvider from "../components/ThemeContext";
 import { Route, Routes } from "react-router-dom";
 import Popular from "./categories/Popular";
 import Hot from "./categories/Hot";
