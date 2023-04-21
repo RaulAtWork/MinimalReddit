@@ -1,3 +1,5 @@
+import { getFormattedDateFromSeconds } from "../../app/utils";
+
 const REDDIT_ENDPOINT = {
   popular: "https://www.reddit.com/r/popular.json",
   hot: "https://www.reddit.com/hot.json",
@@ -29,7 +31,7 @@ function mapReddditPost(post) {
     title: post.data.title,
     createdBy: "u/" + post.data.author_fullname,
     category: "r/" + post.data.subreddit,
-    time: post.data.created,
+    time: getFormattedDateFromSeconds(post.data.created, "DD/MM/YYYY"),
     upvotes: post.data.ups,
     commentCount: post.data.num_comments,
   };
