@@ -5,14 +5,14 @@ import React from "react";
 function Card({ id, title, createdBy, category, time, upvotes, commentCount }) {
   return (
     <section id={id} className="card">
-      <p>
-        {category} - by {createdBy} @ {time}
+      <p className="text-secondary">
+        <b className="text-normal">{category}</b> - by {createdBy} @ {time}
       </p>
       <h2>{title}</h2>
-      <p>
-        <FontAwesomeIcon icon={faUpLong} />
+      <p className="text-secondary">
+        <FontAwesomeIcon className="icon-s" icon={faUpLong} />
         &nbsp;{upvotes} upvotes&nbsp;|&nbsp;
-        <FontAwesomeIcon icon={faComments} />
+        <FontAwesomeIcon className="icon-s" icon={faComments} />
         &nbsp;{commentCount} comments
       </p>
     </section>

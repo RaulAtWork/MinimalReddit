@@ -38,17 +38,29 @@ footer {
 }
 #main-content > :first-child {
   width: 300px;
-  background-color: var(--color-secondary);
+  background-color: var(--color-background);
 }
 
 nav{
     display: flex;
     flex-direction: column;
+    margin-left: 16px;
 }
+nav a {
+  padding: 5px 16px;
+}
+
+nav a:hover {
+  background-color: var(--color-primary);
+  border-radius: 5px;
+  color: var(--color-background);
+}
+
 main{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     padding-top: var(--nav-padding-top);
+    background-color: var(--color-background-light);
 }
