@@ -1,25 +1,23 @@
 @import "./variables.css";
 /*Global changes*/
-:root {
-  --header-height: 56px;
-  --footer-height: 46px;
-}
 
-
-
-html{
-    min-height: 100vh;
-    color: var(--color-text);
-    background-color: var(--color-background);
+html {
+  min-height: 100vh;
+  color: var(--color-text);
+  background-color: var(--color-background);
 }
 
 header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
   padding: 0px 16px;
   height: var(--header-height);
   background-color: var(--color-primary);
+  position: fixed;
+  top: 0;
+  z-index: 100;
 }
 
 footer {
@@ -36,15 +34,15 @@ footer {
   display: flex;
   min-height: calc(100vh - var(--header-height) - var(--footer-height));
 }
-#main-content > :first-child {
-  width: 300px;
-  background-color: var(--color-background);
+
+#main-content > *{
+  padding-top: calc(var(--header-height) + 16px) !important;
 }
 
-nav{
-    display: flex;
-    flex-direction: column;
-    margin-left: 16px;
+nav {
+  display: flex;
+  flex-direction: column;
+  margin-left: 16px;
 }
 nav a {
   padding: 5px 16px;
@@ -56,11 +54,16 @@ nav a:hover {
   color: var(--color-background);
 }
 
-main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding-top: var(--nav-padding-top);
-    background-color: var(--color-background-light);
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-top: var(--nav-padding-top);
+  background-color: var(--color-background-light);
+}
+
+a{
+  display: flex;
+  align-items: center;
 }

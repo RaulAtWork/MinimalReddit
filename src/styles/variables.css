@@ -1,3 +1,5 @@
 :root{
     --max-width-container: 560px;
+    --header-height: 56px;
+    --footer-height: 46px;
 }
