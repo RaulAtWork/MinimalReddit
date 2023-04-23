@@ -89,3 +89,11 @@
 .switch.off .switch-handle {
   transform: translateX(2px);
 }
+
+.external_link{
+  color: var(--color-primary);
+  display: inline;
+}
+.external_link:hover{
+  text-decoration: underline;
+}

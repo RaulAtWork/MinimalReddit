@@ -34,5 +34,33 @@ function mapReddditPost(post) {
     time: getFormattedDateFromSeconds(post.data.created, "DD/MM/YYYY"),
     upvotes: post.data.ups,
     commentCount: post.data.num_comments,
+    media: mapRedditPostMedia(post),
   };
+}
+
+/*
+image -> url
+link -> url
+hosted:video -> media -> media_video -> fallback_url
+*/
+
+function mapRedditPostMedia(post) {
+  const media = {
+    image: null,
+    link: null,
+    video: null,
+  };
+
+  switch (post.data.post_hint) {
+    case "image":
+      media.image = post.data.url;
+      break;
+    case "link":
+      media.link = post.data.url;
+      break;
+    /*case "hosted:video":
+      media.video = post.data.media.media_video.fallback_url;
+      break;*/
+  }
+  return media;
 }

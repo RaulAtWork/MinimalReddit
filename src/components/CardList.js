@@ -14,6 +14,7 @@ function CardList({ list }) {
             commentCount={item.commentCount}
             time={item.time}
             upvotes={item.upvotes}
+            media={item.media}
           ></Card>
         ))}
     </>
