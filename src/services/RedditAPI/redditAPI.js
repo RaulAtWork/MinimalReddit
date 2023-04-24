@@ -1,11 +1,12 @@
 import { getFormattedDateFromSeconds } from "../../app/utils";
 
+const REDDIT_BASE = "https://www.reddit.com";
 const REDDIT_ENDPOINT = {
-  popular: "https://www.reddit.com/r/popular.json",
-  hot: "https://www.reddit.com/hot.json",
-  new: "https://www.reddit.com/new.json",
-  rising: "https://www.reddit.com/rising.json",
-  top: "https://www.reddit.com/top.json",
+  popular: REDDIT_BASE + "/r/popular.json",
+  hot: REDDIT_BASE + "/hot.json",
+  new: REDDIT_BASE + "/new.json",
+  rising: REDDIT_BASE + "/rising.json",
+  top: REDDIT_BASE + "/top.json",
 };
 
 export const REDDIT_CATEGORY = {
@@ -26,6 +27,39 @@ export function mapRedditPostList({ data }) {
 }
 
 function mapReddditPost(post) {
+  function mapRedditPostMedia(post) {
+    /*image -> url
+      link -> url
+      hosted:video -> media -> media_video -> fallback_url
+    */
+    const media = {
+      image: null,
+      link: null,
+      video: null,
+    };
+
+    switch (post.data.post_hint) {
+      case "image":
+        media.image = post.data.url;
+        break;
+      case "link":
+        media.link = post.data.url;
+        break;
+      case "hosted:video":
+        if (post.data.media.reddit_video) {
+          media.video = post.data.media.reddit_video.fallback_url;
+        } else if (post.data.media.media_video)
+          media.video = post.data.media.media_video.fallback_url;
+        break;
+    }
+    return media;
+  }
+
+  function mapRedditPostAddress(post) {
+    //https://www.reddit.com/<permalink>
+    return REDDIT_BASE + post.data.permalink;
+  }
+
   return {
     id: post.data.id,
     title: post.data.title,
@@ -35,32 +69,6 @@ function mapReddditPost(post) {
     upvotes: post.data.ups,
     commentCount: post.data.num_comments,
     media: mapRedditPostMedia(post),
+    address: mapRedditPostAddress(post),
   };
-}
-
-/*
-image -> url
-link -> url
-hosted:video -> media -> media_video -> fallback_url
-*/
-
-function mapRedditPostMedia(post) {
-  const media = {
-    image: null,
-    link: null,
-    video: null,
-  };
-
-  switch (post.data.post_hint) {
-    case "image":
-      media.image = post.data.url;
-      break;
-    case "link":
-      media.link = post.data.url;
-      break;
-    /*case "hosted:video":
-      media.video = post.data.media.media_video.fallback_url;
-      break;*/
-  }
-  return media;
 }

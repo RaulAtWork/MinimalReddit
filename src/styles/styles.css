@@ -35,6 +35,19 @@
 .ml-s{
   margin-left: 6px;
 }
+.flex-column{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.external_link{
+  color: var(--color-primary);
+  display: inline;
+}
+.external_link:hover{
+  text-decoration: underline;
+}
 
 /* adhoc SELECTORS*/
 #sidebar { 
@@ -51,6 +64,17 @@
   margin-top: auto;
   margin-left: auto;
 }
+
+.card-image{
+  width: 100%;
+  /*max-height: 600px;*/
+}
+
+.card-video{
+  width: 100%;
+  max-height: 600px;
+}
+
 
 
 /*SWITCH CSS*/
@@ -88,12 +112,4 @@
 
 .switch.off .switch-handle {
   transform: translateX(2px);
-}
-
-.external_link{
-  color: var(--color-primary);
-  display: inline;
-}
-.external_link:hover{
-  text-decoration: underline;
 }

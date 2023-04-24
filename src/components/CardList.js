@@ -15,6 +15,7 @@ function CardList({ list }) {
             time={item.time}
             upvotes={item.upvotes}
             media={item.media}
+            address={item.address}
           ></Card>
         ))}
     </>
