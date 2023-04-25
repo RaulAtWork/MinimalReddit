@@ -39,20 +39,20 @@ function Carousel({ children }) {
         })}
       </div>
       <div className="indicators">
-        <button onClick={prevIndex}>p</button>
+        <button onClick={prevIndex}>{"<"}</button>
         {React.Children.map(children, (child, index) => {
           return (
             <button
-              className={index === activeIndex && "active"}
+              className={
+                index === activeIndex ? "active btn-round" : "btn-round"
+              }
               onClick={() => {
                 updateIndex(index);
               }}
-            >
-              {index + 1}
-            </button>
+            ></button>
           );
         })}
-        <button onClick={nextIndex}>n</button>
+        <button onClick={nextIndex}>{">"}</button>
       </div>
     </div>
   );
